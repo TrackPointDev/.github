@@ -16,19 +16,35 @@ classDiagram
     }
 
     class Routes {
-        +getRoutes(app)
+        +getRoutes(app, probot)
         +postRoutes(app, probot)
     }
 
     class GetHandler {
-        +helloWorld(req, res)
+        +helloWorld()
+        +getEpic()
+        +getTask()
     }
 
     class PostHandler {
-        +test(req, res, app)
-        +epicUpdate(req, res, app)
-        +taskUpdate(req, res, app)
-        +epicSetup(req, res, app)
+        +epicSetup()
+        +epicUpdate()
+        +epicDelete()
+        +taskCreate()
+        +taskUpdate()
+        +taskDelete()
+    }
+
+    class GithubUtils {
+        +authenticateGitHubClient()
+        +fetchRepositoryId()
+        +fetchData()
+        +updateData()
+    }
+
+    class JsonUtil {
+        +parseJson()
+        +stringifyJson()
     }
 
     ProbotApp --> AppFunction : uses
@@ -36,4 +52,10 @@ classDiagram
     ProbotApp --> Routes : uses
     Routes --> GetHandler : uses
     Routes --> PostHandler : uses
+    GetHandler ..> GithubUtils : depends on
+    PostHandler ..> GithubUtils : depends on
+    GetHandler ..> JsonUtil : depends on
+    PostHandler ..> JsonUtil : depends on
+    IssueHandler ..> JsonUtil : depends on
+
 ```
