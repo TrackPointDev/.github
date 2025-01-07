@@ -1,14 +1,12 @@
 ```mermaid
 classDiagram
-    class ProbotApp {
+    class Plugin {
         +onWebhookEvent()
         +sendToBackend()
         +receiveFromBackend()
-        +createIssue()
-        +editIssue()
     }
 
-    class GitHubWebhook {
+    class PlatformHubWebhook {
         +triggerEvent()
         +deliverPayload()
     }
@@ -18,6 +16,6 @@ classDiagram
         +receiveData()
     }
 
-    ProbotApp o-- GitHubWebhook : listens
-    ProbotApp o-- BackendService : communicates
+    Plugin o-- PlatformHubWebhook : listens
+    Plugin o-- BackendService : communicates
 ```
