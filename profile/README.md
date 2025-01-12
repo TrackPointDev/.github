@@ -12,5 +12,8 @@
 -->
 
 Welcome to the GitHub Organization for TrackPoint, we are two DTU students writing our bachelor project.
-To use this Plugin you need to gain access to the provided Sheets
 
+To use the deployed backend you need to gain access to the provided Google Sheets with make installed.
+
+After gaining access to sheets you can install the App to your desired repo:
+- A link to our App can be found [here](https://github.com/apps/trackpoint-github) with its required setup.
