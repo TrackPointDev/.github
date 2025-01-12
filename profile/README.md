@@ -12,3 +12,5 @@
 -->
 
 Welcome to the GitHub Organization for TrackPoint, we are two DTU students writing our bachelor project.
+To use this Plugin you need to gain access to the provided Sheets
+
